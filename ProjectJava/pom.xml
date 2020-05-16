@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--Los básicos -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.0.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <organization>
+    <name>SEP - Secretaria de Educación Pública</name>
+    <url>https://sep.org.mx/</url>
+  </organization>
+
+  <groupId>mx.sep.nen</groupId>
+  <artifactId>sep-nen</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>sep-nen-web</module>
+    <module>sep-nen-service</module>
+    <module>sep-nen-data</module>
+    <module>sep-nen-model</module>
+  </modules>
+
+  <properties>
+    <main.basedir>${basedir}/../..</main.basedir>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <spring.boot.version>2.2.0.RELEASE</spring.boot.version>
+    <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source> <!-- REQUIRED -->
+    <maven.compiler.target>${java.version}</maven.compiler.target> <!-- REQUIRED -->
+    <!-- dependencies -->
+    <swagger.version>2.8.0</swagger.version>
+    <lombok.version>1.16.18</lombok.version>
+    <karate-junit4-version>0.9.1</karate-junit4-version>
+    <cucumber-reporting-version>3.13.0</cucumber-reporting-version>
+    <karate-apache-version>0.9.1</karate-apache-version>
+    <karate-apache-core>0.9.1</karate-apache-core>
+    <guava-version>23.0-android</guava-version>
+    <junit-version>4.12</junit-version>
+    <junit-jupiter.version>5.3.2</junit-jupiter.version>
+    <mockito.version>2.24.0</mockito.version>
+
+    <!--plugins-->
+    <spotbugs.version>3.1.3</spotbugs.version>
+    <checkstyle.version>3.0.0</checkstyle.version>
+    <findbugs-maven-plugin-version>3.0.5</findbugs-maven-plugin-version>
+    <maven-surefire-plugin-version>2.22.1</maven-surefire-plugin-version>
+    <maven-failsafe-plugin-version>2.22.1</maven-failsafe-plugin-version>
+    <xml-maven-plugin-version>1.0</xml-maven-plugin-version>
+    <jacoco-maven-plugin-version>0.8.2</jacoco-maven-plugin-version>
+
+    <ojdbc8-version>12.2.0.1</ojdbc8-version>
+    <commons-dbcp-version>1.4</commons-dbcp-version>
+    <mybatis-spring-boot-starter-version>2.1.2</mybatis-spring-boot-starter-version>
+    <mybatis-spring-version>2.0.4</mybatis-spring-version>
+    <mybatis-generator-maven-plugin-version>1.4.0</mybatis-generator-maven-plugin-version>
+    <mybatis-generator-core-version>1.4.0</mybatis-generator-core-version>
+    <postgresql-version>42.2.5</postgresql-version>
+
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-ui</artifactId>
+        <version>1.2.32</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-data-rest</artifactId>
+        <version>1.2.32</version>
+      </dependency>
+
+    </dependencies>
+
+  </dependencyManagement>
+
+  <!--  Configuraciones de ambiente -->
+  <issueManagement>
+    <system>Microsoft Teams</system>
+    <url>www.teams.microsfot.com</url>
+  </issueManagement>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>http://jenkins.sep.gob.mx</url>
+  </ciManagement>
+  <scm>
+    <tag>sep.digital</tag>
+    <url>git@gitlab.com:sep/covid-sep-nen.git</url>
+    <connection>ssh:git@gitlab.com:sep/covid-sep-nen.git</connection>
+  </scm>
+
+  <repositories>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/libs-milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+
+</project>
